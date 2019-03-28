@@ -1,0 +1,43 @@
+.svg-icon {
+	margin: 0 4px 8px 0;
+}
+
+.section-menu {
+	margin: 10px 0 40px 0;
+}
+
+.section-menu .menu-item-image {
+	width: 40px;
+	margin-right: 10px;
+}
+
+
+
+/* Table site menu list */
+
+.row{
+	height:1000px;
+}
+.box{
+	width:400px;
+	color:red;
+}
+
+
+.box ul{
+	font-size:25px;
+	font-weight: bold;
+}
+
+.box img{
+	
+	width:60px;
+}
+
+.section-orders{
+	text-align:center;
+}	
+
+a:hover{
+	color:red;
+}

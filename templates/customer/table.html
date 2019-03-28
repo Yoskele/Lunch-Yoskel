@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center mt-2">Menu</h1>
+<div class="container">
+	<div class="section-menu">
+
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<div class="alert alert-info" role="alert">
+						{{ message }}
+					</div>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+	<!-- To do: add menu content here. -->
+<div class="row">
+
+	<div class="box col-sm-6">
+	{% for menu in menus %}	
+		<ul class="list-group">
+			<div>
+		 		<a href="{{ url_for('make_order', menu_item_id= menu.id) }}" class="list-group-item"><img src="{{menu.img}} " class="mr-3" alt="TeaCup"> {{menu.name}} {{menu.price}}$</a>
+			</div>
+		</ul>
+	{% endfor %}
+	</div>
+
+
+
+	<div class="box col-sm-6">
+		<h2> Your Orders </h2>
+		<ul class="list-group">
+	{% for order in orders %}
+			<div>
+			 	<li class="list-group-item"><img src="{{ order.menu_item.img }} " class="mr-3" alt="TeaCup"> {{ order.menu_item.name }} </a>
+			</div>
+		</ul>
+	{% endfor %}
+	</div>
+
+</div>
+
+{% endblock %}
+
+
